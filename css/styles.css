@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  height: 100vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
 }
@@ -153,25 +153,86 @@ header {
   max-width: 100%;
 }
 
-.donde-estamos {
-  position: relative;
-  width: 100%;
-  height: 800px;
-  overflow: hidden;
+/* Estilo base */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
+  gap: 20px; /* Espacio entre los elementos */
+  padding: 20px; /* Espacio alrededor del contenedor */
+  box-sizing: border-box;
 }
 
-.donde-estamos img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.item {
+  flex: 1 1 calc(25% - 20px); /* Ancho base de 25% menos el espacio de gap */
+  text-align: center;
+  background-color: rgba(74, 85, 104, 0.32); /* Color de fondo con transparencia */
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.item-icon {
+  width: 50px;
+  height: 50px;
   display: block;
+  margin: 0 auto 10px; /* Centrar el ícono y añadir espacio inferior */
 }
 
-.donde-estamos .texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Media Queries */
+/* Pantallas medianas (tabletas en orientación horizontal) */
+@media (max-width: 992px) {
+  .item {
+    flex: 1 1 calc(50% - 20px); /* Ancho de 50% menos el espacio de gap */
+  }
+}
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column; /* Apilar los elementos en una sola columna */
+    align-items: center; /* Centrar los elementos */
+  }
+  .item {
+    flex: 1 1 100%; /* Ancho completo para cada elemento */
+    margin-bottom: 20px; /* Espacio inferior entre elementos */
+  }
+}
+/* Efecto de fade-in */
+.item {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Efecto de hover */
+.item:hover {
+  background-color: rgba(74, 85, 104, 0.5); /* Aumenta la opacidad del fondo */
+  box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); /* Efecto de brillo */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#donde-estamos .texto {
   color: #fff; /* Color del texto para contrastar con la imagen */
   text-align: center; /* Centra el texto */
   padding: 50px; /* Espacio interno alrededor del texto */
@@ -181,163 +242,53 @@ header {
   border-radius: 10px;
 }
 
-#servicios {
-  padding: 40px;
-  background-color: #000;
+#servicios h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.servicios {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.container {
-  position: relative;
-  margin: 50px;
-  top: -10%;
-  left: 50%;
-  transform: translate(-65%, 0%);
-  width: 1000px;
-  height: 500px;
-  background: #f5f5f5;
-  box-shadow: 0 30px 50px #dbdbdb;
-}
-
-.container .slide .item {
-  width: 200px;
-  height: 300px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  border-radius: 20px;
-  box-shadow: 0 30px 50px #363635;
-  background-position: 50% 50%;
-  background-size: cover;
-  display: inline-block;
-  transition: 0.5s;
-}
-
-.slide .item:nth-child(1),
-.slide .item:nth-child(2) {
-  top: 0;
-  left: 0;
-  transform: translate(0, 0);
-  border-radius: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.slide .item:nth-child(3) {
-  left: 50%;
-}
-
-.slide .item:nth-child(4) {
-  left: calc(50% + 220px);
-}
-
-/* Desaparece cualquier elemento adicional */
-.slide .item:nth-child(n+5) {
-  left: calc(50% + 440px);
-  opacity: 0;
-}
-
-.item .content {
-  position: relative;
-  top: 50%;
-  left: 100px;
-  width: 300px;
-  text-align: left;
-  color: #eee;
-  transform: translate(0, -50%);
-  font-family: system-ui;
-  display: none;
-}
-
-.slide .item:nth-child(2) .content {
-  display: block;
-}
-
-.content .name {
-  font-size: 40px;
-  text-transform: uppercase;
-  font-weight: bold;
-  opacity: 0;
-  animation: animate 1s ease-in-out 1 forwards;
-}
-
-.content .des {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: animate 1s ease-in-out 0.3s 1 forwards;
-}
-
-.content button {
-  padding: 10px 20px;
-  border: none;
+.servicios__item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
-  opacity: 0;
-  animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
-
-@keyframes animate {
-  from {
-    opacity: 0;
-    transform: translate(0, 100px);
-    filter: blur(33px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0);
-    filter: blur(0);
-  }
-}
-.button {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 50px;
-  right: -210px;
-}
-
-.button button {
-  background-color: rgba(2, 1, 0, 0.5333333333);
-  color: #ffffff;
-  width: 40px;
-  height: 35px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  margin: 0 5px;
-  transition: 0.3s;
-}
-
-.button button:hover {
-  background: #aa6915;
-  color: #fff;
-}
-
-.pedir-turno {
-  border-radius: 20px 20px 20px 0px;
-  backdrop-filter: blur(50%);
-  background-color: rgba(255, 255, 255, 0.5333333333);
-}
-
-.intro-content {
-  text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.397); /* Fondo semitransparente para mejorar la legibilidad */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
+  margin: 10px;
   padding: 10px;
 }
 
-.intro h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
+.servicios__item:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
 }
 
-.intro p {
-  font-size: 20px;
+/* Efectos de expansión y contracción */
+.servicios__contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
+.servicios__contenido.expandido {
+  max-height: 500px; /* Ajusta según el contenido */
+  padding-bottom: 1.5rem;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.expandido {
+  transform: rotate(180deg);
+}
+
+/* Desaparece cualquier elemento adicional */
 .redes {
   text-align: center;
   background-color: #000;

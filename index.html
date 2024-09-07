@@ -8,6 +8,8 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+
 
     <title>Vitruvio Peluqueria en La Plata</title>
 
@@ -25,7 +27,7 @@
 
   </head>
   <body>
-
+    
     <header>
 
       <nav class="navbar navbar-expand-lg">
@@ -42,9 +44,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#servicios">SERVICIOS</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#">PRECIOS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#donde-estamos">DÓNDE ESTAMOS</a></li>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#">CONTACTO</a>
+              <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a>
               </li>
               
               
@@ -80,27 +82,63 @@
             </div>
         </div>
     </section>
+
+    <section class="elegirnos">
+      <h2>por que elegirnos?</h2>
+      <div class="container">
+        <div class="item">
+          <img src="public/imgs/oreja.png" alt="Icono 1" class="item-icon">
+          <h3>Te escuchamos</h3>
+          <p>En Vitruvio nos importa lo que querés. Estamos acá para asesorarte y ayudarte a encontrar lo que mejor te queda, sin apuros, con toda la dedicación.</p>
+        </div>
+        <div class="item">
+          <img src="public/imgs/taza-de-cafe.png" alt="Icono 2" class="item-icon">
+          <h3>Un momento para vos</h3>
+          <p>Relajate con un café en mano mientras nosotros nos encargamos de todo. Nuestro espacio está pensado para que te sientas cómodo y desconectes por un rato.</p>
+        </div>
+        <div class="item">
+          <img src="public/imgs/medalla.png" alt="Icono 3" class="item-icon">
+          <h3>Sabemos lo que hacemos</h3>
+          <p>Contamos con especialistas que llevan años en esto, así que podés confiar en que vas a estar en buenas manos.</p>
+        </div>
+        <div class="item">
+          <img src="public/imgs/mapa.png" alt="Icono 4" class="item-icon">
+          <h3>Justo en el centro</h3>
+          <p>Estamos en pleno corazón de la ciudad, así que podés visitarnos fácilmente cuando te quede mejor. ¡Un momento de relax sin complicaciones!</p>
+        </div>
+      </div>
+      
+      
+    </section>
     
-    <section class="donde-estamos">
-      <img src="public/imgs/fondo-donde-estamos.jpg" alt="Descripción de la imagen">
+    <section id="donde-estamos">
+      
       <div class="texto">
-          <h2>Podés visitar nuestro salón ubicado en el centro de la ciudad de La Plata <br> 7 entre 45 y 46</h2>
-          
+          <h2>Podés visitar nuestro salón ubicado en el centro de la ciudad de La Plata <br> 7 entre 45 y 46</h2>    
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.7936707072786!2d-57.95629442512837!3d-34.91162707382315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e71a3b15b1b1%3A0xda541b261114c7a4!2sVitruvio%20La%20Plata!5e0!3m2!1ses-419!2sar!4v1725551598049!5m2!1ses-419!2sar" width="400" height="300" style="border: 2px; border-radius: 10px; margin-top: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       
     </section>
       
 
-     <section id="servicios" style="background-image: url(public\imgs\fondo-donde-estamos.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+      <div class="servicios">
+          <div class="servicios__grid">
+              <!-- Los servicios se insertarán aquí dinámicamente con JavaScript -->
+          </div>
+      </div>
+    </section>
+
+     <!-- <section id="servicios" style="background-image: url(public\imgs\fondo-donde-estamos.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
       <div class="intro">
         <div class="intro-content">
           <h1>Nuestros Servicios</h1>
           <p>En Vitruvio ofrecemos peluquería femenina, barbería, manicuría y depilación definitiva.</p>
         </div>
-      </div>
+      </div> -->
       
-      <div class="container">
+      <!-- <div class="container">
         <div class="slide">
           <div class="item" style="background-image: url('public/imgs/peluqueria-femenina.jpg');">
             <div class="content">
@@ -135,8 +173,8 @@
           <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
           <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-      </div>
-    </section>
+      </div> -->
+    <!-- </section> -->
      
 
       <section class="nuestros-profesonales"></section>
